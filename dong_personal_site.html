@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dong's Hacker Page 💻</title>
+  <link rel="icon" type="image/png" href="https://i.imgur.com/60V2vZP.png" />
+
+  <!-- Google Font & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #222;
+      --card: rgba(255, 255, 255, 0.85);
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #f0f0f0;
+      --card: rgba(34, 34, 34, 0.9);
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    .container {
+      background: var(--card);
+      backdrop-filter: blur(8px);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 90%;
+      max-width: 420px;
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      margin-top: 16px;
+      font-size: 26px;
+    }
+
+    .intro {
+      font-size: 16px;
+      margin: 12px 0 20px;
+      min-height: 40px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid var(--text);
+      width: 0;
+      animation: typing 4s steps(60, end) forwards, blink 0.7s step-end infinite;
+    }
+
+    .section-title {
+      font-weight: bold;
+      margin: 20px 0 10px;
+      font-size: 18px;
+    }
+
+    .skills {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      font-size: 16px;
+      flex-wrap: wrap;
+    }
+
+    .skills span {
+      background: #007bff;
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 20px;
+      transition: background 0.3s;
+    }
+
+    .skills span:hover {
+      background: #0056b3;
+    }
+
+    .social-icons {
+      margin-top: 25px;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      font-size: 24px;
+      color: var(--text);
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #007bff;
+      transform: scale(1.1);
+    }
+
+    .dark-toggle {
+      margin-top: 20px;
+      background: none;
+      border: 2px solid var(--text);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      color: var(--text);
+      transition: all 0.3s;
+    }
+
+    .dark-toggle:hover {
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      0%, 100% { border-color: transparent }
+      50% { border-color: var(--text) }
+    }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <div class="container">
+    <img src="https://i.imgur.com/sVvS0H1.jpeg" alt="avatar" class="avatar" />
+    <h1>Phung Duy Dong</h1>
+    <p class="intro">19-year-old cyber student. Don't let the innocent look fool you — I master 3 legendary skills.</p>
+
+    <div class="section-title">Skills</div>
+    <div class="skills">
+      <span>🍜 Eating</span>
+      <span>🛌 Sleeping</span>
+      <span>🫎 Chilling</span>
+    </div>
+
+    <div class="section-title">Contact</div>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/dong.phung.26" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="mailto:phungdong2616@gmail.com" title="Gmail"><i class="fas fa-envelope"></i></a>
+      <a href="https://zalo.me/84963463281" target="_blank" title="Zalo"><i class="fas fa-comment-dots"></i></a>
+    </div>
+
+    <button class="dark-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+  </div>
+
+  <!-- particles.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+    }
+
+    // particles.js config
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3 },
+        line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+        move: { enable: true, speed: 3 }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" }
+        },
+        modes: {
+          repulse: { distance: 100 },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+</body>
+</html>
